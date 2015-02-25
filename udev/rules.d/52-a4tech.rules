@@ -1,0 +1,3 @@
+KERNEL=="event[0-9]", SUBSYSTEM=="input", ATTRS{bInterfaceNumber}=="00", ENV{.joystick}="YES"
+KERNEL=="event[0-9]", ENV{.joystick}=="YES", ATTRS{manufacturer}=="A4TECH", ATTRS{idProduct}=="9090", RUN+="/usr/bin/rm /dev/input/%k"
+KERNEL=="js[0-9]", SUBSYSTEM=="input", ATTRS{manufacturer}=="A4TECH", ATTRS{idProduct}=="9090", RUN+="/usr/bin/rm /dev/input/%k"
