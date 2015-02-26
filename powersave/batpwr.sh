@@ -6,7 +6,7 @@ xuser=$(who|grep ":0"|cut -f 1 -d " "|tail -n 1)
 
 sudo -u $xuser kdialog --passivepopup 'Powersave profile activated!' 5
 
-cpupower frequency-set -g performance
+cpupower frequency-set -g powersave
 
 hdparm -B 127 /dev/sda
 
@@ -41,5 +41,3 @@ echo 'auto' > '/sys/bus/pci/devices/0000:00:14.0/power/control'
 echo 'auto' > '/sys/bus/pci/devices/0000:00:1f.0/power/control'
 echo 'auto' > '/sys/bus/pci/devices/0000:00:02.0/power/control'
 echo 'auto' > '/sys/bus/pci/devices/0000:00:1c.3/power/control'
-
-modprobe ath9k btcoex_enable=1 bt_ant_diversity=1 ps_enable=1

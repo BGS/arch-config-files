@@ -5,7 +5,7 @@ DISPLAY=:0.0
 xuser=$(who|grep ":0"|cut -f 1 -d " "|tail -n 1)
 sudo -u $xuser kdialog --passivepopup 'Performance profile activated!' 5
 
-cpupower frequency-set -g powersave
+cpupower frequency-set -g performance
 
 hdparm -B 128 /dev/sda
 
